@@ -15,6 +15,4 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/bot', function () use ($router) {
-    return $router->app->version();
-});
+$router->get('bot', ['as' => 'bot' , 'uses' => 'BotController@handle']);
