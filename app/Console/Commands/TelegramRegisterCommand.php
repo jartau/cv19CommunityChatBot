@@ -43,8 +43,10 @@ class TelegramRegisterCommand extends Command
                 . '/setWebhook?url=' . route('bot');
             $this->info('Calling "' . $url . '"...');
             $output = json_decode(file_get_contents($url));
-
+            $this->info('Response:');
+            $this->info(json_encode($output, JSON_PRETTY_PRINT));
             if ($output->ok == true && $output->result == true) {
+
                 $this->info('Done!');
             } else {
                 $this->error('Error at calling telegram API');
