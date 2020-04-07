@@ -1,7 +1,7 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
+    "name": "jartau/cv19CommunityChatBot",
+    "description": "Covid-19 chatbot community",
+    "keywords": ["chatbot", "covid-19", "lumenn"],
     "license": "MIT",
     "type": "project",
     "require": {
