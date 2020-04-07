@@ -30,11 +30,11 @@ class BotController extends Controller
     private function showHelp(): void
     {
         $this->bot->reply(__('chatbot.help_intro'));
-        $this->bot->reply(__('chatbot.help_help', [
-            'cmd_help' => __('chatbot.cmd_help')
-        ]));
         $this->bot->reply(__('chatbot.help_request', [
             'cmd_request' => __('chatbot.cmd_request')
+        ]));
+        $this->bot->reply(__('chatbot.help_help', [
+            'cmd_help' => __('chatbot.cmd_help')
         ]));
     }
 

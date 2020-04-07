@@ -6,7 +6,7 @@ return [
     'cmd_confirm_yes' => '/confirmar',
     'cmd_confirm_no' => '/descartar',
 
-    'help_intro' => 'Benvingut al chatbot OmplimMBot de la comunitat, pots usar-me escrivint o fent click a les següents comandes',
+    'help_intro' => 'Benvingut al chatbot OmplimMBot de la comunitat, pots utilitzar-me escrivint o fent click a les següents comandes',
     'help_help' => ':cmd_help per obrir l\'ajuda altra vegada',
     'help_request' => ':cmd_request per fer una sol·licitud d\'enviament',
 
@@ -26,7 +26,7 @@ return [
 
     'confirm_title' => 'Aquesta és la informació de la teva petició de material, si us plau revisa-la',
     'confirm_question' => 'Si tot és correcte fes click o escriu :cmd_confirm_yes, en cas contrari :cmd_confirm_no',
-    'confirm_ok' => 'Petició enviada',
+    'confirm_ok' => 'Petició enviada. En breu ens posarem en contacte amb tu. Gràcies.',
     'confirm_ko' => 'Petició cancel·lada',
 
     'name' => 'Nom y cognoms',
