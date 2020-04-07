@@ -31,6 +31,8 @@ class MaterialRequest extends Mailable
      */
     public function build()
     {
-        return $this->view('material-request')->with($this->requestParams);
+        return $this->view('material-request')
+            ->subject(__('chatbot.mail_subject'))
+            ->with($this->requestParams);
     }
 }

@@ -44,8 +44,10 @@ class RequestMaterialConversation extends Conversation
                 'location' => $this->location,
                 'cp' => $this->cp,
                 'address' => $this->address,
+                'mail' => $this->mail,
                 'phone' => $this->phone,
                 'entity' => $this->entity,
+                'description' => $this->description,
             ]
         ));
     }
