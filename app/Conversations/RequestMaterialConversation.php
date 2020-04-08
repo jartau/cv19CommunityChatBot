@@ -38,7 +38,7 @@ class RequestMaterialConversation extends Conversation
 
     public function sendConfirmation(): void
     {
-        Mail::to(env('MAIL_TO'))->send(new MaterialRequest(
+        Mail::to(config('mail.to_address'))->send(new MaterialRequest(
             [
                 'name' => $this->name,
                 'location' => $this->location,
