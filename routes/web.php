@@ -11,9 +11,4 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return __('chatbot.name');
-    //return $router->app->version();
-});
-
 $router->post('bot', ['as' => 'bot' , 'uses' => 'BotController@handle']);
