@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BotService\BotInterface;
 use App\Conversations\RequestMaterialConversation;
 use BotMan\BotMan\BotManFactory;
 use BotMan\BotMan\Cache\LaravelCache;
@@ -14,51 +15,19 @@ class BotController extends Controller
 
     protected $bot;
 
-    public function __construct()
+    public function __construct(BotInterface $bot)
     {
-        // Load the driver(s) you want to use
-        DriverManager::loadDriver(\BotMan\Drivers\Telegram\TelegramDriver::class);
-
-        // Create an instance
-        $this->bot = BotManFactory::create([
-            'telegram' => [
-                'token' => env('TELEGRAM_TOKEN')
-            ]
-        ], new LaravelCache());
-    }
-
-    private function showHelp(): void
-    {
-        $this->bot->reply(__('chatbot.help_intro'));
-        $this->bot->reply(__('chatbot.help_request', [
-            'cmd_request' => __('chatbot.cmd_request')
-        ]));
-        $this->bot->reply(__('chatbot.help_help', [
-            'cmd_help' => __('chatbot.cmd_help')
-        ]));
+        $this->bot = $bot;
     }
 
     /**
-     * Create a new controller instance.
+     * Bot hear action
      *
      * @return void
      */
-    public function handle()
+    public function handle(): void
     {
-        $this->bot->hears('/start', function () {
-            $this->showHelp();
-        });
-
-        $this->bot->hears(__('chatbot.cmd_help'), function () {
-            $this->showHelp();
-        });
-
-        $this->bot->hears(__('chatbot.cmd_request'), function () {
-            $this->bot->startConversation(new RequestMaterialConversation());
-        });
-
-        // Start listening
-        $this->bot->listen();
+        $this->bot->hear();
     }
 
 }
